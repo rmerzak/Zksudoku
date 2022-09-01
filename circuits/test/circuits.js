@@ -148,7 +148,7 @@ describe("Sudoku circuit", function () {
               [9, 2, 6, 8, 4, 5, 7, 1, 3],
               [3, 6, 5, 7, 1, 8, 4, 2, 9],
               [2, 7, 8, 4, 6, 9, 5, 3, 1],
-              [4, 1, 9, 5, 3, 2, 6, 7, 8],
+              [7, 1, 9, 5, 3, 2, 6, 7, 8],
               [6, 5, 3, 1, 2, 4, 9, 8, 7],
               [8, 4, 1, 9, 5, 7, 3, 6, 2],
               [4, 9, 2, 6, 8, 3, 1, 5, 7],
@@ -156,9 +156,9 @@ describe("Sudoku circuit", function () {
           };
           try {
             await SudokuCircuit.calculateWitness(input);
-          } catch {
-            assert(err.message.includes("Assert failed"));
-          }
+        } catch (err) {
+            assert(err.message.includes("Assert Failed"));
+        }
     });
     it ("sould fail: repeated numbers in a square", async function () {
         let input = {
