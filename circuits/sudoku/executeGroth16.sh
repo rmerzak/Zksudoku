@@ -4,10 +4,7 @@
 CIRCUIT=sudoku
 
 # varialble for storing the number of the ptau file
-
 PTAU=14
-
-
 
 if ["$1"]; then
     CIRCUIT=$1
@@ -17,7 +14,7 @@ if ["$2"]; then
     CIRCUIT=$2
 fi
 
-if [ -f ./ptau/powerOfTau28_hez_final_${PTAU}.ptau]; then
+if [ -f ./ptau/powersOfTau28_hez_final_${PTAU}.ptau]; then
     echo "powerOfTau28_hez_final_${PTAU}.ptau";
 else
     echo "Download powerOfTau28_hez_final_${PTAU}.ptau"
