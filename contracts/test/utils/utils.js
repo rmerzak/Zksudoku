@@ -1,8 +1,8 @@
 const {groth16} = require("snarkjs");
 
 async function exportCalldataGroth16(input, wasmPath, zkeyPath) {
-    const {proof :_proof, publicSinal: _publicSinal} = await groth16.fullProve(input, wasmPath, zkeyPath);
-    const calldata = await groth16.exportSolidityCallData(_proof, _publicSinal);
+    const {proof :_proof, publicSignals: _publicSignals} = await groth16.fullProve(input, wasmPath, zkeyPath);
+    const calldata = await groth16.exportSolidityCallData(_proof, _publicSignals);
 
     const argv = calldata.replace(/["[\]\s]/g,"").split(",").map((x)=>BigInt(x).toString());
 
